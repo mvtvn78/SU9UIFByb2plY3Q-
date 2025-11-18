@@ -1,0 +1,13 @@
+package com.maivantien.lab301;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Lab301ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
