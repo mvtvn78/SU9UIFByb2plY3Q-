@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+F:/Study/IOT/iot-projects/Lab211/build/CMakeFiles/bootloader
+F:/Study/IOT/iot-projects/Lab211/build/CMakeFiles/bootloader.rule
+F:/Study/IOT/iot-projects/Lab211/build/CMakeFiles/bootloader-complete.rule
+F:/Study/IOT/iot-projects/Lab211/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+F:/Study/IOT/iot-projects/Lab211/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+F:/Study/IOT/iot-projects/Lab211/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+F:/Study/IOT/iot-projects/Lab211/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+F:/Study/IOT/iot-projects/Lab211/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+F:/Study/IOT/iot-projects/Lab211/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+F:/Study/IOT/iot-projects/Lab211/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

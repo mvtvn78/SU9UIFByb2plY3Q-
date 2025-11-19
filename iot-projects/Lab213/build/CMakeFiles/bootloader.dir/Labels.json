@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "F:/Study/IOT/iot-projects/Lab213/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
