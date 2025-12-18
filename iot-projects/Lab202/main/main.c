@@ -10,5 +10,5 @@ void app_main(void)
     printf("Hello world!\n");
     printf("Restarting now.\n");
     fflush(stdout);
-    esp_restart();
+    // esp_restart();
 }

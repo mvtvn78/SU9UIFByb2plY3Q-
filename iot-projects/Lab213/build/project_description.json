@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "Lab213",
-    "project_version":    "6ac3772",
+    "project_version":    "272e796-dirty",
     "project_path":       "F:/Study/IOT/iot-projects/Lab213",
     "idf_path":           "F:/Study/IOT/ESP_IDF/v5.1.6/esp-idf",
     "build_dir":          "F:/Study/IOT/iot-projects/Lab213/build",

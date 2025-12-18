@@ -16,12 +16,13 @@
 #include "lwip/dns.h"
 #include "lwip/netdb.h"
 #include "esp_log.h"
+#include "driver/gpio.h"
 #include "mqtt_client.h"
-
+#define LED_PIN 8
 static const char *TAG = "MQTT_EXAMPLE";
-#define ESP_WIFI_SSID "Gau Nghe01"
-#define ESP_WIFI_PASS "GauNghe01"
-#define ESP_BROKER_IP "mqtt://192.168.1.8:1883" //mqtt://192.168.1.4:1883
+#define ESP_WIFI_SSID "aamm"
+#define ESP_WIFI_PASS "chinguyen1234#"
+#define ESP_BROKER_IP "mqtt://10.151.140.78:1883" //mqtt://192.168.1.4:1883
 uint32_t MQTT_CONNECTED = 0;
 static void mqtt_app_start(void);
 static void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data)
@@ -68,6 +69,35 @@ void wifi_init(void)
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
     ESP_ERROR_CHECK(esp_wifi_start());
 }
+void handle_mqtt_message(const char *topic, int topic_len,
+                         const char *data, int data_len)
+{
+    char topic_buf[128];
+    char data_buf[256];
+
+    // Copy topic và data sang buffer có null-terminate để dễ xử lý
+    memcpy(topic_buf, topic, topic_len);
+    topic_buf[topic_len] = '\0';
+
+    memcpy(data_buf, data, data_len);
+    data_buf[data_len] = '\0';
+
+    printf("🚀 Received MQTT Message\n");
+    printf("Topic: %s\n", topic_buf);
+    printf("Data : %s\n", data_buf);
+    // === Anh xử lý tùy theo topic ở đây ===
+    if (strcmp(topic_buf, "/test/topic1") == 0)
+    {
+        if (strcmp(data_buf, "1") == 0) {
+            gpio_set_level(LED_PIN, 0);  // bật đèn
+            printf("Tat den\n");
+        } 
+        else if (strcmp(data_buf, "0") == 0) {
+            gpio_set_level(LED_PIN, 1);  // tắt đèn 
+            printf("Bat den\n");
+        }
+    }
+}
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
 {
     ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%ld", base, (long)event_id);
@@ -88,8 +118,8 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         break;
         case MQTT_EVENT_DATA:
             ESP_LOGI(TAG, "MQTT_EVENT_DATA");
-            printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
-            printf("DATA=%.*s\r\n", event->data_len, event->data);
+            handle_mqtt_message(event->topic, event->topic_len,
+                        event->data, event->data_len);
         break;
         default:
             ESP_LOGI(TAG, "Other event id:%ld", (long)event->event_id);
@@ -128,5 +158,11 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
     wifi_init();
-    xTaskCreate(Publisher_Task, "Publisher_Task", 1024 * 5, NULL, 5, NULL);
+    // xTaskCreate(Publisher_Task, "Publisher_Task", 1024 * 5, NULL, 5, NULL);
+    gpio_config_t io_conf = {
+        .mode = GPIO_MODE_OUTPUT,
+        .pin_bit_mask = (1ULL << LED_PIN),
+    };
+    gpio_config(&io_conf);
+    gpio_set_level(LED_PIN, 0); // Khởi đầu tắt đèn
 }

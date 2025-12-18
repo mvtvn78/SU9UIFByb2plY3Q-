@@ -27,11 +27,18 @@ public class DeviceController {
     }
     @PostMapping("/{id}/control")
     public String controlDevice(@PathVariable Long id, @RequestBody String payload) {
-        Device device = deviceRepository.findById(id).orElse(null);
-        if (device != null) {
-        mqttPublisherService.publish(device.getTopic(), payload);
-        return "Published to " + device.getTopic();
+        // Device device = deviceRepository.findById(id).orElse(null);
+        // if (device != null) {
+        if(id == 1){
+            mqttPublisherService.publish("/mvt/ex202", payload);
         }
-        return "Device not found";
+        else if(id == 2){
+            mqttPublisherService.publish("/mvt/ex202_anhsang", payload);
+        }
+        // mqttPublisherService.publish("/iot/2251068263/led/cmd", payload);
+        // return "Published to " + device.getTopic();
+        return "Published to /iot/2251068263/led/cmd" ;
+        // }
+        // return "Device not found";
     }
 }

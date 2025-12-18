@@ -8,11 +8,11 @@
 TaskHandle_t HelloWorldTaskHandle = NULL;
 void HelloWorld_Task(void *arg)
 {
-while (1)
-{
-    printf("Task running: Hello World ..\n");
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
-}
+    while (1)
+    {
+        printf("Task running: Hello World ..\n");
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    }
 }
 void app_main(void)
 {
