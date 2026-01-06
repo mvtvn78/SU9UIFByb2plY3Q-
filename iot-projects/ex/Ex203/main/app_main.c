@@ -23,13 +23,13 @@
 #include "touch_button.h"
 #include "driver/gpio.h"
 static const char *TAG = "MQTT_EXAMPLE";
-#define ESP_WIFI_SSID "Gau Nghe01"
-#define ESP_WIFI_PASS "GauNghe01"
-#define ESP_BROKER_IP "mqtt://192.168.1.8:1883" //mqtt://192.168.1.4:1883
+#define ESP_WIFI_SSID "Tata"
+#define ESP_WIFI_PASS "11conso1"
+#define ESP_BROKER_IP "mqtt://10.119.64.78:1883" //mqtt://192.168.1.4:1883
 uint32_t MQTT_CONNECTED = 0;
-const char *topicSub = "/iot/2251068263/led/cmd";
-const char* topicPub = "/iot/2251068263/led/state";
-const char* topicTouch = "/iot/2251068263/touch";
+const char *topicSub = "/led/cmd";
+const char* topicPub = "/led/state";
+const char* topicTouch = "/led/touch";
 // =============
 static uint32_t toggle_led = 0; 
 static bool src = true; // true=touch, false=mqtt

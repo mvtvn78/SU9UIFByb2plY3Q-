@@ -1,6 +1,7 @@
 package com.maivantien.lab306.model;
 import jakarta.persistence.*;
 @Entity
+
 public class Device {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

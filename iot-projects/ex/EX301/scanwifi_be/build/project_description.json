@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "scanwifi_be",
-    "project_version":    "272e796-dirty",
+    "project_version":    "3d77e02e-dirty",
     "project_path":       "F:/Study/IOT/iot-projects/ex/EX301/scanwifi_be",
     "idf_path":           "F:/Study/IOT/ESP_IDF/v5.1.6/esp-idf",
     "build_dir":          "F:/Study/IOT/iot-projects/ex/EX301/scanwifi_be/build",
